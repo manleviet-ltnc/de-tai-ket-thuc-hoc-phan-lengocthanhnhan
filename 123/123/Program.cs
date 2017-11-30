@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Text;
+using System.IO;
 
 namespace _123
 {
@@ -15,7 +17,8 @@ namespace _123
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm123());
+            Application.Run(new Form());
         }
     }
 }
+    
