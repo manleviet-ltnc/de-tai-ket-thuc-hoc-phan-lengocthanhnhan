@@ -93,7 +93,7 @@
             this.Name = "frm123";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "123";
-            this.Load += new System.EventHandler(this.frm123_Load);
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.ResumeLayout(false);
 
         }

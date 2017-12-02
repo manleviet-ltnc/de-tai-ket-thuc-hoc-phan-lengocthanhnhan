@@ -17,7 +17,7 @@ namespace _123
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form());
+            Application.Run(new frm123());
         }
     }
 }
