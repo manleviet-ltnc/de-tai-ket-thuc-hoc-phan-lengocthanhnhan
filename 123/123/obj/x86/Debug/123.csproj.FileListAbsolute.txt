@@ -6,3 +6,11 @@ C:\Users\Administrator.MRNC-GK1SVB1P2V\Documents\GitHub\de-tai-ket-thuc-hoc-phan
 C:\Users\Administrator.MRNC-GK1SVB1P2V\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\123.pdb
 C:\Users\Administrator.MRNC-GK1SVB1P2V\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\123.csprojResolveAssemblyReference.cache
 C:\Users\Administrator.MRNC-GK1SVB1P2V\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\bin\Debug\123.exe
+C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\123.exe
+C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\123.pdb
+C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\bin\Debug\123.exe
+C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\bin\Debug\123.pdb
+C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\_123.frm123.resources
+C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\_123.Properties.Resources.resources
+C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\123.csproj.GenerateResource.Cache
+C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\123.csprojResolveAssemblyReference.cache
