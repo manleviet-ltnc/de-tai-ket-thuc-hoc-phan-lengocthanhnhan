@@ -20,6 +20,9 @@ namespace _123
             Load();
             int index = ChoiceQuestion();
 
+            for (index = 1; index <= 25; index++)
+                lblQuestion.Text = index.ToString();
+
         }
 
         public void Load()
@@ -48,7 +51,14 @@ namespace _123
         public int ChoiceQuestion()
         {
             Random r = new Random();
-            return r.Next(1,25);
+            return r.Next(1, 25);
+            int[] b = new int[25];
+            for (int i = 1; i <= 25; i++)
+            {
+                b[i] = r.Next(25);
+                Console.WriteLine("{0}", b[i]);
+            }
+            Console.ReadLine();
         }
     }
 }
