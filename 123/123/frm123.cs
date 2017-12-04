@@ -22,6 +22,7 @@ namespace _123
             Load();
             int index = ChoiceQuestion();
 
+<<<<<<< HEAD
             SetQuestion(index);
            
         }
@@ -40,6 +41,11 @@ namespace _123
                 btn2.Tag = true;
             else if (q.DAD == 3)
                 btn3.Tag = true;
+=======
+            for (index = 1; index <= 25; index++)
+                lblQuestion.Text = index.ToString();
+
+>>>>>>> af6b87695ad2562e7f3bb5da78de62dbc37c26e7
         }
 
         public void Load()
@@ -69,13 +75,20 @@ namespace _123
         {
             int[] b = new int[25];
             Random r = new Random();
+<<<<<<< HEAD
             
             for (int i = 1; i < 25; i++)
+=======
+            return r.Next(1, 25);
+            int[] b = new int[25];
+            for (int i = 1; i <= 25; i++)
+>>>>>>> af6b87695ad2562e7f3bb5da78de62dbc37c26e7
             {
                 b[i] = r.Next(25);
                 Console.WriteLine("{0}", b[i]);
             }
             Console.ReadLine();
+<<<<<<< HEAD
             return r.Next(1,25);
             
             
@@ -97,6 +110,8 @@ namespace _123
             {
                 // 
             }
+=======
+>>>>>>> af6b87695ad2562e7f3bb5da78de62dbc37c26e7
         }
       
     }
