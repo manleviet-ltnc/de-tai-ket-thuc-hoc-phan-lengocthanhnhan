@@ -22,12 +22,24 @@ namespace _123
             Load();
             int index = ChoiceQuestion();
 
-            for (index = 1; index <= 25; index++)
-
-                lblQuestion.Text = index.ToString();
-
-
+            SetQuestion(index);
            
+        }
+
+        public void SetQuestion(int index)
+        {
+            Question q = list[index];
+
+            lblQuestion.Text = q.Q;
+            btn1.Text = q.DA1;
+            btn2.Text = q.DA2;
+            btn3.Text = q.DA3;
+            if (q.DAD == 1)
+                btn1.Tag = true;
+            else if (q.DAD == 2)
+                btn2.Tag = true;
+            else if (q.DAD == 3)
+                btn3.Tag = true;
         }
 
         public void Load()
@@ -55,15 +67,36 @@ namespace _123
 
         public int ChoiceQuestion()
         {
+            int[] b = new int[25];
             Random r = new Random();
-            int[] b = new int[1];
-            for (int i = 1; i <= 25; i++)
+            
+            for (int i = 1; i < 25; i++)
             {
-                b[i] = r.Next(0,25);
-                
+                b[i] = r.Next(25);
                 Console.WriteLine("{0}", b[i]);
             }
-            return;
+            Console.ReadLine();
+            return r.Next(1,25);
+            
+            
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+
+            if ((bool)b.Tag == true)
+            {
+                // Thong bao dung
+                // chuyen sang cau khac
+                int index = ChoiceQuestion();
+
+                SetQuestion(index);
+            }
+            else
+            {
+                // 
+            }
         }
       
     }
