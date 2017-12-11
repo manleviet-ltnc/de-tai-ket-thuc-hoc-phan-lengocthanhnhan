@@ -23,7 +23,7 @@ namespace _123
             int index = ChoiceQuestion();
 
             SetQuestion(index);
-           
+
         }
 
         public void SetQuestion(int index)
@@ -35,11 +35,26 @@ namespace _123
             btn2.Text = q.DA2;
             btn3.Text = q.DA3;
             if (q.DAD == 1)
+            {
                 btn1.Tag = true;
+                btn2.Tag = false;
+                btn3.Tag = false;
+            }
             else if (q.DAD == 2)
+            {
                 btn2.Tag = true;
+                btn1.Tag = false;
+                btn3.Tag = false;
+            }
             else if (q.DAD == 3)
+            {
                 btn3.Tag = true;
+                btn2.Tag = false;
+                btn1.Tag = false;
+            }
+
+
+
         }
 
         public void Load()
@@ -64,25 +79,25 @@ namespace _123
 
             reader.Close();
         }
-
+        // Chọn ngẫu nhiên
         public int ChoiceQuestion()
         {
             int[] b = new int[25];
             Random r = new Random();
             for (int i = 1; i < 25; i++)
-
             {
                 b[i] = r.Next(25);
                 Console.WriteLine("{0}", b[i]);
             }
             Console.ReadLine();
 
-            return r.Next(1, 25);    
-            
+            return r.Next(1, 25);
+
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
+
             Button b = (Button)sender;
 
             if ((bool)b.Tag == true)
@@ -95,10 +110,31 @@ namespace _123
             }
             else
             {
-                Close();
+                MessageBox.Show("Bạn đã trả lời sai");
+
+            }
+        }
+
+        public void Score(int index)
+        {
+            string Score;
+
+            Question q = list[index];
+            Score= lblScore.Text ;
+            for (index = 1; index <= 25; index++)
+            {
+                if ((q.DAD == 1) | (q.DAD == 2) | (q.DAD == 3))
+                {
+                    index = ChoiceQuestion();
+                    SetQuestion(index);                 
+                }
+                Score = Score + 1;
             }
 
         }
-      
     }
-}
+  }
+
+      
+    
+

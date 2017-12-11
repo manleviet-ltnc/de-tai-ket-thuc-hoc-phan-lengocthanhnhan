@@ -32,6 +32,8 @@
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblQuestion
@@ -39,10 +41,10 @@
             this.lblQuestion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblQuestion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuestion.Location = new System.Drawing.Point(44, 56);
+            this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.Location = new System.Drawing.Point(44, 84);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(240, 80);
+            this.lblQuestion.Size = new System.Drawing.Size(240, 63);
             this.lblQuestion.TabIndex = 0;
             // 
             // btn1
@@ -82,22 +84,47 @@
             this.btn3.UseVisualStyleBackColor = false;
             this.btn3.Click += new System.EventHandler(this.btn1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 18);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Score:";
+            // 
+            // lblScore
+            // 
+            this.lblScore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblScore.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.Location = new System.Drawing.Point(68, 13);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(50, 18);
+            this.lblScore.TabIndex = 5;
+            this.lblScore.Text = "0";
+            // 
             // frm123
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(334, 326);
-            this.ControlBox = false;
+            this.Controls.Add(this.lblScore);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.lblQuestion);
             this.Name = "frm123";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "123";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,6 +134,8 @@
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblScore;
     }
 }
 
