@@ -53,6 +53,8 @@
             this.lblBestScore.Name = "lblBestScore";
             this.lblBestScore.Size = new System.Drawing.Size(47, 23);
             this.lblBestScore.TabIndex = 1;
+            this.lblBestScore.Text = "0";
+            this.lblBestScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -81,10 +83,13 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblYourScore.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblYourScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYourScore.Location = new System.Drawing.Point(106, 52);
             this.lblYourScore.Name = "lblYourScore";
             this.lblYourScore.Size = new System.Drawing.Size(46, 27);
             this.lblYourScore.TabIndex = 4;
+            this.lblYourScore.Text = "0";
+            this.lblYourScore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // _123
             // 
@@ -100,6 +105,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "_123";
             this.Text = "123";
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

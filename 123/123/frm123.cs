@@ -15,7 +15,7 @@ namespace _123
     public partial class frm123 : Form
     {
         List<Question> list = new List<Question>();
-
+        
         public frm123()
         {
             InitializeComponent();
@@ -23,9 +23,10 @@ namespace _123
             int index = ChoiceQuestion();
 
             SetQuestion(index);
-
+            
         }
 
+        
         public void SetQuestion(int index)
         {
             Question q = list[index];
@@ -95,13 +96,16 @@ namespace _123
 
         }
 
+        int Score;
         private void btn1_Click(object sender, EventArgs e)
         {
 
-            Button b = (Button)sender;
-
+           Button b = (Button)sender;
+           
             if ((bool)b.Tag == true)
             {
+                Score++;
+                lblScore.Text = Score.ToString();
                 // Thong bao dung
                 // chuyen sang cau khac
                 int index = ChoiceQuestion();
@@ -110,30 +114,18 @@ namespace _123
             }
             else
             {
-                MessageBox.Show("Bạn đã trả lời sai");
-
+                _123 dlg=new _123();
+                dlg.Message = lblScore.Text;
+                dlg.ShowDialog();
             }
         }
 
-        public void Score(int index)
-        {
-            string Score;
-
-            Question q = list[index];
-            Score= lblScore.Text ;
-            for (index = 1; index <= 25; index++)
-            {
-                if ((q.DAD == 1) | (q.DAD == 2) | (q.DAD == 3))
-                {
-                    index = ChoiceQuestion();
-                    SetQuestion(index);                 
-                }
-                Score = Score + 1;
-            }
-
+       
+      
         }
+        
     }
-  }
+  
 
       
     

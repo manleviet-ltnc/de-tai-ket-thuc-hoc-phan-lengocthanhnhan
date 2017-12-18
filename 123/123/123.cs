@@ -15,5 +15,23 @@ namespace _123
         {
             InitializeComponent();
         }
+        
+
+        public string Message
+        {
+            get { return lblYourScore.Text; }
+            set { lblYourScore.Text = value; }
+        }
+
+        public void BestScore
+        {
+            int Score2=0;
+            if(lblBestScore.Text>=lblYourScore.Text)
+            {   
+                lblBestScore.Text=lblYourScore.Text;
+                saveScore();
+            }
+        }
+                
     }
 }

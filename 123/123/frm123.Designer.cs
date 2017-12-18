@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblQuestion
@@ -42,7 +44,7 @@
             this.lblQuestion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuestion.Location = new System.Drawing.Point(44, 84);
+            this.lblQuestion.Location = new System.Drawing.Point(44, 46);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(240, 63);
             this.lblQuestion.TabIndex = 0;
@@ -52,7 +54,7 @@
             this.btn1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn1.Location = new System.Drawing.Point(44, 202);
+            this.btn1.Location = new System.Drawing.Point(44, 134);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(240, 23);
             this.btn1.TabIndex = 1;
@@ -64,7 +66,7 @@
             // 
             this.btn2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2.Location = new System.Drawing.Point(44, 248);
+            this.btn2.Location = new System.Drawing.Point(44, 193);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(240, 24);
             this.btn2.TabIndex = 2;
@@ -76,7 +78,7 @@
             // 
             this.btn3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3.Location = new System.Drawing.Point(44, 294);
+            this.btn3.Location = new System.Drawing.Point(44, 254);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(240, 23);
             this.btn3.TabIndex = 3;
@@ -87,26 +89,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 18);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Score:";
             // 
             // lblScore
             // 
-            this.lblScore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblScore.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(68, 13);
+            this.lblScore.Location = new System.Drawing.Point(63, 9);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(50, 18);
-            this.lblScore.TabIndex = 5;
+            this.lblScore.Size = new System.Drawing.Size(17, 24);
+            this.lblScore.TabIndex = 6;
             this.lblScore.Text = "0";
+            this.lblScore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5;
             // 
             // frm123
             // 
@@ -136,6 +138,7 @@
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
