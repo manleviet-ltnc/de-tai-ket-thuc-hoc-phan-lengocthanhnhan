@@ -100,10 +100,12 @@ namespace _123
         }
 
         int Score;
+        
         private void btn1_Click(object sender, EventArgs e)
         {
 
             Button b = (Button)sender;
+           
             
                 if ((bool)b.Tag == true)
                 {
@@ -114,6 +116,7 @@ namespace _123
                     int index = ChoiceQuestion();
 
                     SetQuestion(index);
+                   
                 }
                 else
                 {
@@ -125,15 +128,33 @@ namespace _123
             
         }
 
-        int time=10;
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblTime.Text = time.ToString();
+          int time=10;
 
-            time--;
+          private void timer1_Tick_1(object sender, EventArgs e)
+          {
+              
+              lblTime.Text = time.ToString();
+
+
+              if (time > 0)
+                 
+                  time--;
+              else if (time == 0)
+              {
+                  timer1.Stop();
+                  MessageBox.Show("Bạn đã hết thời gian");
+                  _123 dlg = new _123(); //Khởi tạo form _123
+                  dlg.Message = lblScore.Text;
+                 
+                  dlg.ShowDialog();
+              }
+
+          }
+
+       
         }
     }
-}
+
   
         
 
