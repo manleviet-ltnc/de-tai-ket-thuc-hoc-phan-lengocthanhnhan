@@ -15,7 +15,7 @@ namespace _123
     public partial class frm123 : Form
     {
         List<Question> list = new List<Question>();
-        
+
         public frm123()
         {
             InitializeComponent();
@@ -23,10 +23,10 @@ namespace _123
             int index = ChoiceQuestion();
 
             SetQuestion(index);
-            
+
         }
 
-        
+
         public void SetQuestion(int index)
         {
             Question q = list[index];
@@ -60,6 +60,9 @@ namespace _123
 
         public void Load()
         {
+            timer1.Interval = 1000;
+            timer1.Enabled = true;
+            timer1.Start();
             StreamReader reader = new StreamReader("Question.txt");
 
             string line;
@@ -100,31 +103,44 @@ namespace _123
         private void btn1_Click(object sender, EventArgs e)
         {
 
-           Button b = (Button)sender;
-           
-            if ((bool)b.Tag == true)
-            {
-                Score++;
-                lblScore.Text = Score.ToString();
-                // Thong bao dung
-                // chuyen sang cau khac
-                int index = ChoiceQuestion();
+            Button b = (Button)sender;
+            
+                if ((bool)b.Tag == true)
+                {
+                    Score++;
+                    lblScore.Text = Score.ToString();
+                    // Thong bao dung
+                    // chuyen sang cau khac
+                    int index = ChoiceQuestion();
 
-                SetQuestion(index);
-            }
-            else
-            {
-                _123 dlg=new _123();
-                dlg.Message = lblScore.Text;
-                dlg.ShowDialog();
-            }
+                    SetQuestion(index);
+                }
+                else
+                {
+                    _123 dlg = new _123(); //Khởi tạo form _123
+                    dlg.Message = lblScore.Text;
+
+                    dlg.ShowDialog();//Hiện form _123 
+                }
+            
         }
+
+        int time=10;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = time.ToString();
+
+            time--;
+        }
+    }
+}
+  
+        
+
+      
 
        
-      
-        }
-        
-    }
+
   
 
       

@@ -33,13 +33,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblYourScore = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 107);
+            this.label1.Location = new System.Drawing.Point(44, 163);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 18);
             this.label1.TabIndex = 0;
@@ -49,7 +50,7 @@
             // 
             this.lblBestScore.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblBestScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBestScore.Location = new System.Drawing.Point(147, 102);
+            this.lblBestScore.Location = new System.Drawing.Point(147, 163);
             this.lblBestScore.Name = "lblBestScore";
             this.lblBestScore.Size = new System.Drawing.Size(47, 23);
             this.lblBestScore.TabIndex = 1;
@@ -71,7 +72,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 24);
+            this.label2.Location = new System.Drawing.Point(83, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 18);
             this.label2.TabIndex = 3;
@@ -84,12 +85,23 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblYourScore.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblYourScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYourScore.Location = new System.Drawing.Point(106, 52);
+            this.lblYourScore.Location = new System.Drawing.Point(108, 112);
             this.lblYourScore.Name = "lblYourScore";
             this.lblYourScore.Size = new System.Drawing.Size(46, 27);
             this.lblYourScore.TabIndex = 4;
             this.lblYourScore.Text = "0";
-            this.lblYourScore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblYourScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(78, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "GAME OVER";
             // 
             // _123
             // 
@@ -97,6 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblYourScore);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
@@ -105,7 +118,6 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "_123";
             this.Text = "123";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +130,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblYourScore;
+        private System.Windows.Forms.Label label3;
     }
 }
