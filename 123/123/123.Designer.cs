@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lblBestScore = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRestart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblYourScore = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,16 +57,17 @@
             this.lblBestScore.Text = "0";
             this.lblBestScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnRestart
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(95, 218);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 31);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Restart";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRestart.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestart.Location = new System.Drawing.Point(95, 218);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(75, 31);
+            this.btnRestart.TabIndex = 2;
+            this.btnRestart.Text = "Restart";
+            this.btnRestart.UseVisualStyleBackColor = false;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // label2
             // 
@@ -112,7 +113,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblYourScore);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.lblBestScore);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -127,7 +128,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblBestScore;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblYourScore;
         private System.Windows.Forms.Label label3;

@@ -110,6 +110,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // lblTime
@@ -119,7 +120,8 @@
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(42, 23);
             this.lblTime.TabIndex = 7;
-            this.lblTime.Text = "10";
+            this.lblTime.Text = "15";
+            this.lblTime.Click += new System.EventHandler(this.btn1_Click);
             // 
             // frm123
             // 
@@ -150,8 +152,8 @@
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblScore;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

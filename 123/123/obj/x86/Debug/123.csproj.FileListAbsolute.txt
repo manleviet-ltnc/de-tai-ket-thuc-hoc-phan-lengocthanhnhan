@@ -14,3 +14,4 @@ C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\
 C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\_123.Properties.Resources.resources
 C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\123.csproj.GenerateResource.Cache
 C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\_123._123.resources
+C:\Users\USER\Documents\GitHub\de-tai-ket-thuc-hoc-phan-lengocthanhnhan\123\123\obj\x86\Debug\123.csprojResolveAssemblyReference.cache

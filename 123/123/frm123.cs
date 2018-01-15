@@ -100,58 +100,65 @@ namespace _123
         }
 
         int Score;
-        
+        int Time=15;
         private void btn1_Click(object sender, EventArgs e)
         {
 
             Button b = (Button)sender;
-           
+            lblTime.Text = Time.ToString();
             
-                if ((bool)b.Tag == true)
+            
+                if ((bool)b.Tag == true&&Time>0)
                 {
+                   
                     Score++;
                     lblScore.Text = Score.ToString();
-                    // Thong bao dung
+                    // Thông báo đúng
                     // chuyen sang cau khac
                     int index = ChoiceQuestion();
 
                     SetQuestion(index);
-                   
+                    Time = 15;
+                    Time--;
                 }
                 else
                 {
+                    //dừng thời gian
+                    timer1.Stop();
                     _123 dlg = new _123(); //Khởi tạo form _123
+                    //Truyền dữ liệu 
                     dlg.Message = lblScore.Text;
-
+                    dlg.Text = lblScore.Text;
                     dlg.ShowDialog();//Hiện form _123 
                 }
             
         }
 
-          int time=10;
+          int time=15;
 
           private void timer1_Tick_1(object sender, EventArgs e)
           {
               
               lblTime.Text = time.ToString();
 
-
               if (time > 0)
-                 
-                  time--;
+              {
+                  time = time - 1;
+              }
               else if (time == 0)
               {
+                  // Dừng chạy thời gian
                   timer1.Stop();
+                  //Thông báo hết giờ
                   MessageBox.Show("Bạn đã hết thời gian");
+                  //Thông báo kết thúc trò chơi
                   _123 dlg = new _123(); //Khởi tạo form _123
                   dlg.Message = lblScore.Text;
-                 
                   dlg.ShowDialog();
+
               }
-
           }
-
-       
+               
         }
     }
 
