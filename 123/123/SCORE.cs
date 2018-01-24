@@ -7,8 +7,18 @@ namespace _123
 {
     class SCORE
     {
-        public string VT { get; set; }
-        public string HT { get; set; }
-        public string Diem { get; set; }
+        string hoten;
+        public string HT 
+        {
+            get { return hoten; }
+            set { hoten = value; }
+               
+        }
+        int diem;
+        public int Diem 
+        {
+            get { return diem; }
+            set { diem = value; }
+        }
     }
 }

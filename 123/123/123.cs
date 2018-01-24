@@ -6,12 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Threading;
 using System.IO;
 
 namespace _123
 {
     public partial class _123 : Form
     {
+        Thread thread;
         
         public _123()
         {
@@ -30,41 +33,17 @@ namespace _123
         }
 
 
-
-        public void _123_Load(object sender, EventArgs e)
-        {
-          
-        }
-       
-       
-
-        //public void Save()
-        //{
-        //    if (yourScore >= bestscore)
-        //    {
-        //        bestscore = yourScore;
-        //        Save(bestscore);
-        //    }
-
-        //}
-        //public void Save(int bestscore)
-        //{
-        //    lblBestScore.Text = bestscore.ToString();
-        //    Save(bestscore);
-        //}
-
-        private void btnRestart_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lbltop10_Click(object sender, EventArgs e)
         {
-            Top10 dlg = new Top10();
-            dlg.ShowDialog();
-            dlg.Top = "TopScore.txt";
+            Close();
+            thread = new Thread(OpenTop);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
-
+        void OpenTop()
+        {
+            Application.Run(new Top10());
+        }
         private void _123_Load()
         {
 

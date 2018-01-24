@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm123));
             this.lblQuestion = new System.Windows.Forms.Label();
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
@@ -133,7 +134,7 @@
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(42, 23);
             this.lblTime.TabIndex = 7;
-            this.lblTime.Text = "15";
+            this.lblTime.Text = "10";
             this.lblTime.Click += new System.EventHandler(this.btn1_Click);
             // 
             // frm123
@@ -152,10 +153,10 @@
             this.Controls.Add(this.lblQuestion);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm123";
-            this.ShowIcon = false;
             this.Text = "123";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm123_FormClosing);
             this.ResumeLayout(false);

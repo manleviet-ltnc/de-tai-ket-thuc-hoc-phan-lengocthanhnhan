@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_123));
             this.label1 = new System.Windows.Forms.Label();
             this.lblBestScore = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@
             this.btnRestart.TabIndex = 2;
             this.btnRestart.Text = "Restart";
             this.btnRestart.UseVisualStyleBackColor = false;
-            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // label2
             // 
@@ -124,7 +124,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.ControlBox = false;
             this.Controls.Add(this.lbltop10);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblYourScore);
@@ -133,9 +132,12 @@
             this.Controls.Add(this.lblBestScore);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "_123";
             this.Text = "123";
-            this.Load += new System.EventHandler(this._123_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

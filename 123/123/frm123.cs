@@ -16,7 +16,7 @@ namespace _123
     public partial class frm123 : Form
     {
         List<Question> list = new List<Question>();
-        List<SCORE> lst = new List<SCORE>();
+        
         public frm123()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace _123
 
         }
 
-        private int[] Thanhtich;
+       
 
         public void Load()
         {
@@ -86,20 +86,8 @@ namespace _123
             reader.Close();
 
             // Load diem vao cau truc luu diem
-             StreamReader rd = new StreamReader("TopScore.txt");
-            string dong;
-            while ((dong = rd.ReadLine()) != null)
-            {
-                char[] delimit = new char[] { '|' };
-                string[] sc = dong.Split(delimit, StringSplitOptions.RemoveEmptyEntries);
-
-                SCORE s = new SCORE();
-                s.VT = sc[0];
-                s.HT = sc[1];
-                s.Diem = sc[2];
-                lst.Add(s);
-            }
-            rd.Close();
+           
+            
             timer1.Start();
         }
         // Chọn ngẫu nhiên
@@ -137,7 +125,7 @@ namespace _123
                     int index = ChoiceQuestion();
 
                     SetQuestion(index);
-                    time = 15;
+                    time = 10;
                     time--;
                 }
                 else
@@ -149,21 +137,15 @@ namespace _123
                     //Truyền dữ liệu 
                     dlg.YourScore = lblScore.Text;
                     dlg.BestScore =""+ 0;
-                    Top10 dg = new Top10();
-                    dg.Top = "TopScore.txt";
-                    // Them chuc nang kiem tra xem yourscore co the dua vao top 10
-                    // Neu co
-                    // thi them vao dung vi tri
-                    // gia su danh sach top 10 duoc luu theo thu tu giam dan
-
-                    // luu y neu them vao qua 10 phan tu thi xoa phan tu cuoi cung di
-
+                    Top10 tp = new Top10();
+                 
                     if (dlg.ShowDialog() == DialogResult.OK)
                     {
                         frm123 frm = new frm123();
                         this.Hide();
                         frm.ShowDialog();
                         this.Show();
+                        timer1.Start();
                     }
                     else 
                     {
@@ -173,7 +155,7 @@ namespace _123
             
         }
 
-          int time=15;
+          int time=10;
 
           private void timer1_Tick_1(object sender, EventArgs e)
           {
@@ -199,38 +181,8 @@ namespace _123
               }
           }
           
-          private void GhiScore()
-          {
-              Thanhtich = new int[10];
-              FileStream GhiScore = new FileStream("TopScore.txt", FileMode.Create, FileAccess.Write, FileShare.None);
-              StreamWriter DongGhi = new StreamWriter(GhiScore);
-              for (int t = 0; t < 10; t++)
-              {
-                  DongGhi.WriteLine(Thanhtich[t]);
-              }
-              DongGhi.Close();
-              GhiScore.Close();
-          }
-
-          private void SapXep_TT()
-          {
-              for (int t = 0; t < 10; t++)
-              {
-                  if (Thanhtich[t] >= Score) { break; }
-                  else
-                  {
-                      if (t == 0)
-                      {
-                          Thanhtich[t] = Score;
-                      }
-                      else
-                      {
-                          Thanhtich[t - 1] = Thanhtich[t];
-                          Thanhtich[t] = Score;
-                      }
-                  }
-              }
-          }
+     
+                  
          
           private void frm123_FormClosing(object sender, FormClosingEventArgs e)
           {
