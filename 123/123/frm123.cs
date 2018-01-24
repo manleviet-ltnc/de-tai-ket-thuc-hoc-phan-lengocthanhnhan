@@ -12,10 +12,11 @@ using System.IO;
 
 namespace _123
 {
+   
     public partial class frm123 : Form
     {
         List<Question> list = new List<Question>();
-
+        List<SCORE> lst = new List<SCORE>();
         public frm123()
         {
             InitializeComponent();
@@ -25,7 +26,6 @@ namespace _123
             SetQuestion(index);
 
         }
-
 
         public void SetQuestion(int index)
         {
@@ -58,11 +58,13 @@ namespace _123
 
         }
 
+        private int[] Thanhtich;
+
         public void Load()
         {
             timer1.Interval = 1000;
             timer1.Enabled = true;
-            timer1.Start();
+           
             StreamReader reader = new StreamReader("Question.txt");
 
             string line;
@@ -82,6 +84,23 @@ namespace _123
             }
 
             reader.Close();
+
+            // Load diem vao cau truc luu diem
+             StreamReader rd = new StreamReader("TopScore.txt");
+            string dong;
+            while ((dong = rd.ReadLine()) != null)
+            {
+                char[] delimit = new char[] { '|' };
+                string[] sc = dong.Split(delimit, StringSplitOptions.RemoveEmptyEntries);
+
+                SCORE s = new SCORE();
+                s.VT = sc[0];
+                s.HT = sc[1];
+                s.Diem = sc[2];
+                lst.Add(s);
+            }
+            rd.Close();
+            timer1.Start();
         }
         // Chọn ngẫu nhiên
         public int ChoiceQuestion()
@@ -100,15 +119,15 @@ namespace _123
         }
 
         int Score;
-        int Time=15;
+        
         private void btn1_Click(object sender, EventArgs e)
         {
 
             Button b = (Button)sender;
-            lblTime.Text = Time.ToString();
+            lblTime.Text = time.ToString();
             
             
-                if ((bool)b.Tag == true&&Time>0)
+                if ((bool)b.Tag == true&&time>0)
                 {
                    
                     Score++;
@@ -118,18 +137,38 @@ namespace _123
                     int index = ChoiceQuestion();
 
                     SetQuestion(index);
-                    Time = 15;
-                    Time--;
+                    time = 15;
+                    time--;
                 }
                 else
                 {
                     //dừng thời gian
                     timer1.Stop();
                     _123 dlg = new _123(); //Khởi tạo form _123
+                   
                     //Truyền dữ liệu 
-                    dlg.Message = lblScore.Text;
-                    dlg.Text = lblScore.Text;
-                    dlg.ShowDialog();//Hiện form _123 
+                    dlg.YourScore = lblScore.Text;
+                    dlg.BestScore =""+ 0;
+                    Top10 dg = new Top10();
+                    dg.Top = "TopScore.txt";
+                    // Them chuc nang kiem tra xem yourscore co the dua vao top 10
+                    // Neu co
+                    // thi them vao dung vi tri
+                    // gia su danh sach top 10 duoc luu theo thu tu giam dan
+
+                    // luu y neu them vao qua 10 phan tu thi xoa phan tu cuoi cung di
+
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        frm123 frm = new frm123();
+                        this.Hide();
+                        frm.ShowDialog();
+                        this.Show();
+                    }
+                    else 
+                    {
+                        Close();
+                    }
                 }
             
         }
@@ -153,10 +192,49 @@ namespace _123
                   MessageBox.Show("Bạn đã hết thời gian");
                   //Thông báo kết thúc trò chơi
                   _123 dlg = new _123(); //Khởi tạo form _123
-                  dlg.Message = lblScore.Text;
+                  dlg.YourScore = lblScore.Text;
+                  dlg.BestScore = "" + 0;
                   dlg.ShowDialog();
 
               }
+          }
+          
+          private void GhiScore()
+          {
+              Thanhtich = new int[10];
+              FileStream GhiScore = new FileStream("TopScore.txt", FileMode.Create, FileAccess.Write, FileShare.None);
+              StreamWriter DongGhi = new StreamWriter(GhiScore);
+              for (int t = 0; t < 10; t++)
+              {
+                  DongGhi.WriteLine(Thanhtich[t]);
+              }
+              DongGhi.Close();
+              GhiScore.Close();
+          }
+
+          private void SapXep_TT()
+          {
+              for (int t = 0; t < 10; t++)
+              {
+                  if (Thanhtich[t] >= Score) { break; }
+                  else
+                  {
+                      if (t == 0)
+                      {
+                          Thanhtich[t] = Score;
+                      }
+                      else
+                      {
+                          Thanhtich[t - 1] = Thanhtich[t];
+                          Thanhtich[t] = Score;
+                      }
+                  }
+              }
+          }
+         
+          private void frm123_FormClosing(object sender, FormClosingEventArgs e)
+          {
+              // Luu top 10 xuong file
           }
                
         }

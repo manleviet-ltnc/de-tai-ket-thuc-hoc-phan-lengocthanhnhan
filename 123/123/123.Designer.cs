@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblYourScore = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lbltop10 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -60,6 +61,7 @@
             // btnRestart
             // 
             this.btnRestart.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRestart.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestart.Location = new System.Drawing.Point(95, 218);
             this.btnRestart.Name = "btnRestart";
@@ -104,12 +106,26 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "GAME OVER";
             // 
+            // lbltop10
+            // 
+            this.lbltop10.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lbltop10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltop10.Location = new System.Drawing.Point(219, 3);
+            this.lbltop10.Name = "lbltop10";
+            this.lbltop10.Size = new System.Drawing.Size(63, 23);
+            this.lbltop10.TabIndex = 6;
+            this.lbltop10.Text = "Top 10";
+            this.lbltop10.UseVisualStyleBackColor = false;
+            this.lbltop10.Click += new System.EventHandler(this.lbltop10_Click);
+            // 
             // _123
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ControlBox = false;
+            this.Controls.Add(this.lbltop10);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblYourScore);
             this.Controls.Add(this.label2);
@@ -119,6 +135,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "_123";
             this.Text = "123";
+            this.Load += new System.EventHandler(this._123_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +149,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblYourScore;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button lbltop10;
     }
 }
